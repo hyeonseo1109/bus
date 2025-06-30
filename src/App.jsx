@@ -19,12 +19,11 @@ function BusStation() {
 
   return (
     <>
-      <h1>버스정류장</h1>
-      <ul>
+      <h1 className='title'>버스정류장</h1>
+      <ul className='busStopList'>
         {stations.map( (station) => (
           <div className="busStop">
             <p>{station.stationName} (id: {station.stationId})</p>
-            <p>|</p>
           </div>
         ))}
       </ul>
