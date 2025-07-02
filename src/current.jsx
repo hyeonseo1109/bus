@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import BusStation from './App';
+import BusStation from './busStation';
 
 function BusLocation () {
     const [locations, setLocation] = useState([]);
