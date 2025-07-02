@@ -12,12 +12,48 @@
 
 .title {
   font-size: 30px;
-  margin: 0;
+  margin: 10px;
+  color: rgb(0, 0, 0);
 }
 
 .busStopList {
   display: flex;
   flex-direction: column;
   font-size: 15px;
-  gap: 5px;
+  gap: 10px;
+  list-style: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+}
+
+.bar {
+  background-color: rgb(155, 158, 216);
+  width: 5px;
+  height: auto;
+  position: relative;
+
+}
+
+.icon {
+  position: absolute;
+  left: 35px;
+  font-size: 20px;
+}
+
+.busStop {
+  align-items: center;
+  display: flex;
+}
+
+.line {
+  background-color: #aaa;
+  width: 300px;
+  margin: 20px 0;
+}
+
+.span {
+  color: red;
 }

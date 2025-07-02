@@ -20,15 +20,21 @@ function BusStation({ locations = [] }) {
 
     return (
         <>
-            <h1 className='title'>버스정류장</h1>
-            <ul className='busStopList'>
-                {stations.map((station) => (
-                    <li className="busStop" key={`${station.stationId}-${station.stationSeq}`}>
-                        {station.stationName} (id: {station.stationId})
-                        {locations.some(location => Number(location.stationId) === Number(station.stationId)) && <span>🚌</span>}
-                    </li>
-                ))}
-            </ul>
+            <h1 className='title'>실시간 <span className='span'>1000번</span> 버스 위치</h1>
+            <div className="section">
+                <div className='bar'></div>
+                <ul className='busStopList'>
+                    {stations.map((station) => (
+                        <div>
+                            <li className="busStop" key={`${station.stationId}-${station.stationSeq}`}>
+                                {station.stationName}
+                                {locations.some(location => Number(location.stationId) === Number(station.stationId)) && <span className='icon'>🚌</span>}
+                            </li>
+                            {station.turnYn === "Y" ? <hr className='line'/> : null}
+                        </div>
+                    ))}
+                </ul>
+            </div>
         </>
     );
 }
