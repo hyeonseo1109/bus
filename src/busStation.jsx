@@ -27,14 +27,14 @@ function BusStation({ locations = [] }) {
                 
                 <ul className='busStopList'>
                     {stations.map((station) => (
-                        <div>
+                        <>
                             <li className="busStop" key={`${station.stationId}-${station.stationSeq}`}>
-                            
+                                <span className='circle'></span>
                                 {station.stationName}
-                                {locations.some(location => Number(location.stationId) === Number(station.stationId)) && <span className='icon'>🚌</span>}
-                            {station.turnYn === "Y" ? <hr className='line'/> : null}
+                                {locations.some(location => Number(location.stationId) === Number(station.stationId)) && (<span className='icon'>🚌</span>)}
                             </li>
-                        </div>
+                            {station.turnYn === "Y" ? (<hr className='line'/>) : null }
+                        </>
                     ))}
                 </ul>
             </div>

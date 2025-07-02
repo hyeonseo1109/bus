@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   font-size: 15px;
-  gap: 10px;
+  gap: 20px;
   list-style: none;
 }
 
@@ -56,4 +56,14 @@
 
 .span {
   color: red;
+}
+
+.circle {
+  position: absolute;
+  left: 36.5px;
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  border: 1px solid rgb(206, 206, 206);
 }
