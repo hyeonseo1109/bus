@@ -23,6 +23,7 @@ function BusStation({ locations = [] }) {
     return (
         <>
             <h1 className='title'>실시간 <span className='span'>1000번</span> 버스 위치</h1>
+            <hr/>
             {locations.length === 0 ? (<p className="no-bus-message">현재 운행 중인 버스가 없습니다.</p>) : null}
             <div className="section">
                 <div className='bar'></div>
