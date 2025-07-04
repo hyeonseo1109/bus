@@ -5,12 +5,12 @@ function BusStation({ locations = [] }) {
     const [stations, setStations] = useState([]);
     const id = 219000013;
     const path = "https://apis.data.go.kr";
-    const url = "6410000/busrouteservice/v2/getBusRouteStationListv2?serviceKey=GS5aLVDaFTPnk4vYpexWNPYAl22LeqGp3N5duJZ3OqXXCfMOz0%2FleRDyv%2B6xHXvIogUG8jV2gCGaG04Hs39uRQ%3D%3D&routeId="
+    const url = "6410000/busrouteservice/v2/getBusRouteStationListv2?serviceKey=GS5aLVDaFTPnk4vYpexWNPYAl22LeqGp3N5duJZ3OqXXCfMOz0%2FleRDyv%2B6xHXvIogUG8jV2gCGaG04Hs39uRQ%3D%3D&"
 
     useEffect(() => {
         const getData = async () => {
             try {
-                const data = await fetch(`${path}/${url}${id}&format=json`);
+                const data = await fetch(`${path}/${url}routeId=${id}&format=json`);
                 const json = await data.json();
                 setStations(json.response.msgBody.busRouteStationList);
             } catch (err) {

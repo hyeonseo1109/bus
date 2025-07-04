@@ -4,11 +4,14 @@ import BusStation from './busStation';
 
 function BusLocation () {
     const [locations, setLocation] = useState([]);
-    // const id = 219000013;
+    const id = 219000013;
+    const path = "https://apis.data.go.kr";
+    const url = "6410000/buslocationservice/v2/getBusLocationListv2?serviceKey=cK%2BEJ2D%2B5ScDSpZks%2FFqzCitoJY8tk00JaD0AGQa1xiob9M84rp60YnI1z9yazrOPfi%2F4Em5RE7meSEHJqW%2BVw%3D%3D&"
+    
     useEffect(() => {
         const getData = async () => {
             try {
-                const data = await fetch(`https://apis.data.go.kr/6410000/buslocationservice/v2/getBusLocationListv2?serviceKey=cK%2BEJ2D%2B5ScDSpZks%2FFqzCitoJY8tk00JaD0AGQa1xiob9M84rp60YnI1z9yazrOPfi%2F4Em5RE7meSEHJqW%2BVw%3D%3D&routeId=219000013&format=json`);
+                const data = await fetch(`${path}/${url}routeId=${id}&format=json`);
                 const json = await data.json();
                 const busLocations = json.response.msgBody.busLocationList;
                 // 실시간 버스가 여러 대 있을 때는 busLocationList가 배열로 오지만, 
