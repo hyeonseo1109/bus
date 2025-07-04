@@ -33,7 +33,7 @@ function BusStation({ locations = [] }) {
                             <li className="busStop" key={`${station.stationId}-${station.stationSeq}`}>
                                 <span className='circle'></span>
                                 {station.stationName}
-                                {locations.some(location => Number(location.stationId) === Number(station.stationId)) && (<span className='icon'>🚌</span>)}
+                                {locations.some(location => location.stationId === station.stationId) && (<span className='icon'>🚌</span>)}
                             </li>
                             {station.turnYn === "Y" ? (<hr className='line'/>) : null }
                         </>
